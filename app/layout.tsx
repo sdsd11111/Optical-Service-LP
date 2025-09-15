@@ -5,9 +5,28 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'Optical Service',
+  description: 'Bienvenido a Optical Service, disfruta de nuestros Servicios.',
+  generator: 'Next.js',
+  openGraph: {
+    title: 'Optical Service',
+    description: 'Bienvenido a Optical Service, disfruta de nuestros Servicios.',
+    images: [
+      {
+        url: '/Imagen destacada.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Optical Service',
+      },
+    ],
+    url: 'https://optical-service-lp.vercel.app/',
+    type: 'website',
+    siteName: 'Optical Service',
+  },
+  metadataBase: new URL('https://optical-service-lp.vercel.app'),
+  alternates: {
+    canonical: '/',
+  },
 }
 
 export default function RootLayout({
