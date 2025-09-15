@@ -60,22 +60,22 @@ export function ImageCarousel() {
             >
               <CarouselContent>
                 {images.map((image, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                    <div className="p-1">
-                      <div className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div className="aspect-w-16 aspect-h-9 w-full overflow-hidden rounded-t-lg">
+                  <CarouselItem key={index} className="w-[85%] sm:w-auto sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    <div className="h-full px-1">
+                      <div className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+                        <div className="h-40 w-full overflow-hidden rounded-t-lg">
                           <Image
                             src={image.src}
                             alt={image.alt}
-                            width={600}
-                            height={400}
-                            className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            width={400}
+                            height={300}
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                             priority={index < 2}
                           />
                         </div>
-                        <div className="bg-white p-4 dark:bg-gray-900">
-                          <h3 className="text-lg font-semibold text-foreground mb-1">{image.title}</h3>
-                          <p className="text-sm text-muted-foreground">{image.description}</p>
+                        <div className="bg-white p-3 dark:bg-gray-900">
+                          <h3 className="text-base font-semibold text-foreground line-clamp-1">{image.title}</h3>
+                          <p className="text-xs text-muted-foreground line-clamp-2">{image.description}</p>
                         </div>
                       </div>
                     </div>
@@ -86,13 +86,15 @@ export function ImageCarousel() {
               <CarouselPrevious 
                 className={cn(
                   "left-2 md:-left-4 h-10 w-10 rounded-full bg-white/90 shadow-md hover:bg-white transition-colors",
-                  "border-none text-primary hover:text-primary/90"
+                  "border-none text-primary hover:text-primary/90",
+                  "hidden sm:flex" // Hide on mobile
                 )}
               />
               <CarouselNext 
                 className={cn(
                   "right-2 md:-right-4 h-10 w-10 rounded-full bg-white/90 shadow-md hover:bg-white transition-colors",
-                  "border-none text-primary hover:text-primary/90"
+                  "border-none text-primary hover:text-primary/90",
+                  "hidden sm:flex" // Hide on mobile
                 )}
               />
             </Carousel>

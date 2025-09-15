@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="100" rx="10" fill="#F0F9FF"/>
+  <path d="M50 30H150V70H50V30Z" fill="#0EA5E9"/>
+  <text x="100" y="60" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white">SER FOUNDATION</text>
+</svg>

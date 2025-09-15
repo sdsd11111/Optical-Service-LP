@@ -9,7 +9,7 @@ export function HeroSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary mb-6 text-balance">
-            Tu visión perfecta es nuestra especialidad en Loja
+            Cuidamos tu <span className="bg-gradient-to-r from-blue-600 to-cyan-400 bg-clip-text text-transparent">visión</span> y tu presupuesto en Loja
           </h1>
 
           <Button
