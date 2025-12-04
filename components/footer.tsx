@@ -26,17 +26,17 @@ export function Footer() {
             <div>
               <h4 className="font-semibold mb-4">Contacto</h4>
               <ul className="space-y-2 text-sm text-primary-foreground/80">
-                <li>Centro de Loja, Ecuador</li>
-                <li>Llámanos a este número: 0983428426</li>
-                <li>WhatsApp: +593 98 765-4321</li>
-                <li>info@opticalservice.ec</li>
+                <li>Colón y Olmedo esquina-Centro, Loja</li>
+                <li>Llámanos: +593 99 298 9719</li>
+                <li>WhatsApp: +593 99 298 9719</li>
+                <li>email@opticaylentes.com</li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-primary-foreground/20 pt-6 text-center">
             <p className="text-sm text-primary-foreground/60">
-              Diseñado por @cesarreyesjaramillo.com 2025 Optical Service. Todos los derechos reservados.
+              Diseñado por <a href="https://cesarreyesjaramillo.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">Cesar Reyes</a> | Optical Service 2025
             </p>
           </div>
         </div>

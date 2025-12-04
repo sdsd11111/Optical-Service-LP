@@ -1,7 +1,11 @@
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Glasses, Contact, Brain, Frame } from "lucide-react"
 import Image from "next/image"
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
+import { useEffect, useState } from "react"
 
 export function ServicesSection() {
   const services = [
@@ -19,7 +23,7 @@ export function ServicesSection() {
       title: "Lentes de Contacto",
       description:
         "Especialistas en lentes esclerales, la alternativa más segura a la cirugía para córneas irregulares.",
-      features: ["Lentes Esclerales", "Lentes Blandos", "Lentes Rígidos", "Ortoqueratología"],
+      features: ["Lentes Esclerales", "Lentes Blandos", "Lentes Terapéuticos", "Lentes de Cilindro Extendido"],
       highlight: true,
       image: "/contact-lens-service.jpg",
     },
@@ -40,6 +44,68 @@ export function ServicesSection() {
       image: "/frames-service.jpg",
     },
   ]
+
+  // Estado para los carruseles
+  const [currentContactIndex, setCurrentContactIndex] = useState(0);
+  const [currentTherapyIndex, setCurrentTherapyIndex] = useState(0);
+  const [currentFramesIndex, setCurrentFramesIndex] = useState(0);
+
+  // Efecto para el carrusel automático
+  useEffect(() => {
+    const contactInterval = setInterval(() => {
+      setCurrentContactIndex((prev) => (prev + 1) % 3); // 3 imágenes
+    }, 3000);
+
+    const therapyInterval = setInterval(() => {
+      setCurrentTherapyIndex((prev) => (prev + 1) % 4); // 4 imágenes
+    }, 3500);
+
+    const framesInterval = setInterval(() => {
+      setCurrentFramesIndex((prev) => (prev + 1) % 2); // 2 imágenes
+    }, 4000);
+
+    return () => {
+      clearInterval(contactInterval);
+      clearInterval(therapyInterval);
+      clearInterval(framesInterval);
+    };
+  }, []);
+
+  // Imágenes para cada servicio
+  const contactImages = [
+    "/contact-lens-service.jpg",
+    "/Lentes de contacto 1.jpg",
+    "/Lentes de contacto 2.jpg",
+    "/Lentes de contacto 3.jpg"
+  ];
+
+  const therapyImages = [
+    "/visual-therapy-service.jpg",
+    "/Terapia visual 1.jpg",
+    "/Terapia visual 2.jpg",
+    "/Terapia visual 3.jpg",
+    "/Terapia visual 4.jpg"
+  ];
+
+  const framesImages = [
+    "/frames-service.jpg",
+    "/Armazones 1.jpg",
+    "/Armazones 2.jpg"
+  ];
+
+  // Función para obtener la imagen actual
+  const getCurrentImage = (serviceTitle: string) => {
+    switch(serviceTitle) {
+      case 'Lentes de Contacto':
+        return contactImages[currentContactIndex % contactImages.length];
+      case 'Terapia Visual':
+        return therapyImages[currentTherapyIndex % therapyImages.length];
+      case 'Armazones':
+        return framesImages[currentFramesIndex % framesImages.length];
+      default:
+        return serviceTitle === 'Elaboración de Lentes' ? "/lens-elaboration-service.jpg" : "/placeholder.svg";
+    }
+  };
 
   return (
     <section className="py-20">
@@ -65,7 +131,16 @@ export function ServicesSection() {
                 )}
 
                 <div className="relative h-48 overflow-hidden rounded-t-lg">
-                  <Image src={service.image || "/placeholder.svg"} alt={service.title} fill className="object-cover" />
+                  <Image 
+                    src={getCurrentImage(service.title)} 
+                    alt={service.title} 
+                    fill 
+                    className="object-cover transition-opacity duration-1000"
+                    style={{
+                      opacity: 1,
+                      transition: 'opacity 1s ease-in-out'
+                    }}
+                  />
                 </div>
 
                 <CardHeader>

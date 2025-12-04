@@ -19,19 +19,19 @@ const images = [
     description: 'Solución cómoda para condiciones corneales complejas.'
   },
   {
-    src: '/blue-light-blocking-glasses.png',
-    alt: 'Lentes con protección de luz azul',
+    src: '/proteccion digital.jpg',
+    alt: 'Protección para pantallas digitales',
     title: 'Protección Digital',
     description: 'Lentes diseñados para proteger tus ojos de la luz azul de las pantallas.'
   },
   {
-    src: '/designer-sunglasses.png',
+    src: '/Gafas de sol.jpg',
     alt: 'Gafas de sol de diseño',
     title: 'Gafas de Sol',
     description: 'Protección UV con el último estilo en diseño de gafas de sol.'
   },
   {
-    src: '/beach-water-sunglasses.jpg',
+    src: '/Estilo al Aire Libre.jpg',
     alt: 'Estilo y protección para tus actividades al aire libre',
     title: 'Estilo al Aire Libre',
     description: 'Disfruta del sol con estilo y la mejor protección para tus ojos.'
@@ -40,7 +40,7 @@ const images = [
 
 export function ImageCarousel() {
   return (
-    <section className="py-16 bg-white">
+    <section className="pt-4 pb-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">

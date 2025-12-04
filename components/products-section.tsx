@@ -14,7 +14,7 @@ export function ProductsSection() {
   const products = [
     {
       icon: Shield,
-      title: "Lentes de Contacto Esclerales",
+      title: "Lentes de contacto Escleral",
       description:
         "La solución más avanzada para córneas irregulares, queratocono y ojo seco severo. Alternativa segura a la cirugía.",
       image: "/scleral-contact-lenses.jpg",
@@ -58,7 +58,7 @@ export function ProductsSection() {
       description:
         "Protección completa contra rayos UV con tecnología polarizada para máximo confort visual en exteriores.",
       image: "/polarized-uv-sunglasses.jpg",
-      benefits: ["100% UV", "Anti-reflejos", "Visión clara"],
+      benefits: ["Gafas de sol Polarizadas", "Gafas con Filtro Uv", "Gafas Espejadas"],
       modalProducts: [
         {
           title: "Gafas Deportivas Polarizadas",

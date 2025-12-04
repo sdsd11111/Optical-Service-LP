@@ -10,7 +10,7 @@ export function AboutSection() {
       icon: Award,
       number: "12",
       label: "Años de experiencia",
-      description: "Brindando soluciones visuales especializadas",
+      description: "Contamos con más de 12 años de experiencia clínica y brindando un servicio de calidad.",
     },
     {
       icon: Users,
@@ -39,10 +39,23 @@ export function AboutSection() {
       alt: 'Logo Fundación SER'
     },
     {
+      name: 'CACPE Loja',
+      logo: '/cacpe.jpg',
+      alt: 'Logo CACPE Loja'
+    },
+    {
       name: 'Coopmego',
       logo: '/coopmego.png',
       alt: 'Logo Coopmego'
     }
+  ]
+
+  // Galería de imágenes
+  const galleryImages = [
+    '/Quienes somos/1.jpg',
+    '/Quienes somos/2.jpg',
+    '/Quienes somos/3.jpg',
+    '/Quienes somos/4.jpg'
   ]
 
   return (
@@ -52,8 +65,7 @@ export function AboutSection() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Quiénes Somos</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
-              Somos especialistas en <strong>lentes de contacto esclerales</strong>, una alternativa innovadora a la
-              cirugía para córneas delicadas, y en <strong>terapia visual</strong> personalizada.
+              Somos especialistas en evaluación clínica visual, lentes de contacto escleral para corneas de alta complejidad y realizamos terapia visual personalizada.
             </p>
           </div>
 
@@ -86,7 +98,8 @@ export function AboutSection() {
                 </div>
                 
                 <p className="text-sm text-muted-foreground mb-4">
-                  Trabajamos con convenios empresariales y ofrecemos facilidades de pago. Colaboramos con la Fundación SER y Coopmego para tu bienestar visual.
+                  Trabajamos en conjunto a la Fundación SER.
+                  Otorgamos facilidad de pago al personal de la Coop. de ahorro y Crédito CACPE Loja.
                 </p>
                 
                 <div className="relative mx-auto max-w-xs">
@@ -164,7 +177,8 @@ export function AboutSection() {
                 </div>
                 
                 <p className="text-sm text-muted-foreground mb-4">
-                  Trabajamos con convenios empresariales y ofrecemos facilidades de pago. Colaboramos con la Fundación SER y Coopmego para tu bienestar visual.
+                  Trabajamos en conjunto a la Fundación SER.
+                  Otorgamos facilidad de pago al personal de la Coop. de ahorro y Crédito CACPE Loja.
                 </p>
                 
                 <div className="relative mx-auto max-w-xs">
@@ -200,7 +214,40 @@ export function AboutSection() {
               </CardContent>
             </Card>
           </div>
-          
+
+          {/* Espaciado entre secciones */}
+          <div className="h-8"></div>
+
+          {/* Galería de imágenes */}
+          <div className="mb-8 py-12 bg-white/50 rounded-2xl shadow-lg">
+            <h3 className="text-3xl font-bold text-center mb-12 text-primary">Nuestro Espacio</h3>
+            <div className="max-w-5xl mx-auto px-4">
+              <Carousel className="w-full">
+                <CarouselContent>
+                  {galleryImages.map((image, index) => (
+                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                      <div className="p-3">
+                        <div className="relative aspect-square rounded-xl overflow-hidden group shadow-md">
+                          <Image
+                            src={image}
+                            alt={`Imagen ${index + 1} de nuestras instalaciones`}
+                            fill
+                            className="object-cover transition-all duration-500 group-hover:scale-110"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            priority={index < 2}
+                          />
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <div className="hidden md:flex justify-center gap-4 mt-6">
+                  <CarouselPrevious className="relative left-0 top-0 translate-y-0" size="lg" />
+                  <CarouselNext className="relative right-0 top-0 translate-y-0" size="lg" />
+                </div>
+              </Carousel>
+            </div>
+          </div>
         </div>
       </div>
     </section>

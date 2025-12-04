@@ -1,0 +1,65 @@
+INSTRUCCIONES DE DESPLIEGUE - FORMULARIO DE CONTACTO
+================================================
+
+1. SUBIR ARCHIVOS AL HOSTING
+---------------------------
+Sube TODOS los archivos a la raíz de tu hosting (public_html o similar):
+
+- La carpeta `out` completa (generada por `pnpm run export`)
+- El archivo `contacto.php`
+- El archivo `.htaccess`
+- (Opcional) `test-php.php` para probar el servidor
+
+2. VERIFICAR PERMISOS
+-------------------
+Asegúrate de que los permisos sean:
+- Archivos: 644
+- Carpetas: 755
+
+3. PROBAR EL SERVIDOR PHP
+-----------------------
+Antes de probar el formulario, verifica que PHP esté funcionando:
+1. Ve a: https://tu-dominio.com/test-php.php
+2. Deberías ver información del servidor
+3. Verifica que diga "La función mail() está habilitada"
+
+4. PROBAR EL FORMULARIO
+----------------------
+1. Completa el formulario de contacto en tu sitio
+2. Verifica que recibas el correo en email@opticaylentes.com
+3. Revisa la carpeta de spam si no lo ves
+
+5. SOLUCIÓN DE PROBLEMAS
+-----------------------
+Si el formulario no funciona:
+
+1. Revisa la consola del navegador (F12 > Consola)
+2. Verifica que el archivo `contacto.php` esté en la raíz
+3. Asegúrate de que PHP esté habilitado en tu hosting
+4. Revisa los logs de error en cPanel
+
+6. CONFIGURACIÓN DE CORREO EN CPANEL (si es necesario)
+---------------------------------------------------
+Si los correos no se envían:
+1. Ve a cPanel > Correo Electrónico > Cuentas de correo
+2. Verifica que la cuenta email@opticaylentes.com exista
+3. Si usas un correo externo, configura el reenvío
+
+7. ACTUALIZAR CONFIGURACIÓN PHP (si es necesario)
+-----------------------------------------------
+Si es necesario modificar la configuración de PHP:
+1. Crea o edita el archivo `php.ini` en la raíz
+2. Agrega o modifica estas líneas:
+   ```
+   upload_max_filesize = 20M
+   post_max_size = 20M
+   max_execution_time = 300
+   max_input_time = 300
+   ```
+
+8. SOPORTE
+---------
+Si necesitas ayuda adicional, contacta a tu proveedor de hosting o abre un ticket de soporte con esta información:
+- URL de la página de contacto
+- Captura de pantalla del error (si lo hay)
+- Resultado de test-php.php
