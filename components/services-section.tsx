@@ -74,8 +74,8 @@ export function ServicesSection() {
   // Imágenes para cada servicio
   const contactImages = [
     "/contact-lens-service.jpg",
-    "/Lentes de contacto 1.jpg",
-    "/Lentes de contacto 2.jpg",
+    "/lentes-contacto-1.jpg",
+    "/lentes-contacto-2.jpg",
     "/Lentes de contacto 3.jpg"
   ];
 
@@ -95,7 +95,7 @@ export function ServicesSection() {
 
   // Función para obtener la imagen actual
   const getCurrentImage = (serviceTitle: string) => {
-    switch(serviceTitle) {
+    switch (serviceTitle) {
       case 'Lentes de Contacto':
         return contactImages[currentContactIndex % contactImages.length];
       case 'Terapia Visual':
@@ -122,19 +122,18 @@ export function ServicesSection() {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className={`relative hover:shadow-xl transition-all duration-300 ${
-                  service.highlight ? "ring-2 ring-accent/20 bg-accent/5" : ""
-                }`}
+                className={`relative hover:shadow-xl transition-all duration-300 ${service.highlight ? "ring-2 ring-accent/20 bg-accent/5" : ""
+                  }`}
               >
                 {service.highlight && (
                   <Badge className="absolute -top-3 left-6 bg-accent text-accent-foreground">Servicio Principal</Badge>
                 )}
 
                 <div className="relative h-48 overflow-hidden rounded-t-lg">
-                  <Image 
-                    src={getCurrentImage(service.title)} 
-                    alt={service.title} 
-                    fill 
+                  <Image
+                    src={getCurrentImage(service.title)}
+                    alt={service.title}
+                    fill
                     className="object-cover transition-opacity duration-1000"
                     style={{
                       opacity: 1,
@@ -146,9 +145,8 @@ export function ServicesSection() {
                 <CardHeader>
                   <div className="flex items-center gap-4">
                     <div
-                      className={`p-3 rounded-lg ${
-                        service.highlight ? "bg-accent text-accent-foreground" : "bg-primary/10 text-primary"
-                      }`}
+                      className={`p-3 rounded-lg ${service.highlight ? "bg-accent text-accent-foreground" : "bg-primary/10 text-primary"
+                        }`}
                     >
                       <service.icon className="h-6 w-6" />
                     </div>

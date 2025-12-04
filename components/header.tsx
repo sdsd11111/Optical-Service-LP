@@ -16,10 +16,10 @@ export function Header() {
           {/* Logo y nombre */}
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 relative">
-              <Image 
-                src="/logo.jpg" 
-                alt="Optical Service Logo" 
-                fill 
+              <Image
+                src="/logo-1.jpg"
+                alt="Optical Service Logo"
+                fill
                 className="object-contain"
                 priority
               />
